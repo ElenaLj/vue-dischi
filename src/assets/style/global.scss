@@ -14,15 +14,27 @@
 .container {
     margin: 0 auto;
     width: 80%;
-}
-
-.albums-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 50px;
 }
 
+/* - - - - - - - - 
+    fonts 
+- - - - - - - - - */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+
+
+/* - - - - - - - -
+    commons 
+- - - - - - - - - */
+body {
+    font-family: 'Oswald', sans-serif;
+}
 /* - - - - - - - -
     typo
 - - - - - - - - - */

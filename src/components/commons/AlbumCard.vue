@@ -1,110 +1,21 @@
 <template>
-  <div class="albums-container">
         <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
+            <img :src="info.poster" :alt="info.author">
+            <h3>{{info.title}}</h3>
      
             <div class="text">
-                <p>Bon Jovi</p>
-                <p>1988</p>
+                <p>{{info.author}}</p>
+                <p>{{info.year}}</p>
             </div>
         </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-
-        <div class="album">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="Bon Jovi, New Jersey Album">
-            <h3>New Jersey</h3>
-     
-            <div>
-                <p>Bon Jovi</p>
-                <p>1988</p>
-            </div>
-        </div>
-  </div>
 </template>
 
 <script>
 export default {
-    name: 'AlbumCard'
+    name: 'AlbumCard',
+    props:  {
+        info: Object
+    }
 }
 </script>
 
@@ -112,12 +23,11 @@ export default {
 @import '../../assets/style/partials/variables.scss';
 
    .album {
-            width: calc(100% / 5 - 20px);
-            height: 300px;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: $background-lightblue;
-            text-align: center;
+        height: 300px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: $background-lightblue;
+        text-align: center;
             
 
             img {
@@ -127,7 +37,8 @@ export default {
 
             .text {
                 margin-top: 10px;
+                color: $text-grey;
             }
-        }
+    }
 
 </style>
