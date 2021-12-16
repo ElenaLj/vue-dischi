@@ -1,3 +1,4 @@
+@import './partials/variables.scss';
 /* - - - - - - - - - - - 
     reset
 - - - - - - - - - - - - */
@@ -5,4 +6,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* - - - - - - - - - - - 
+    containers
+- - - - - - - - - - -  */
+.container {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.albums-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 50px;
+}
+
+/* - - - - - - - -
+    typo
+- - - - - - - - - */
+h3 {
+    color: $text-light;
+    text-transform: $text-uppercase;
 }
