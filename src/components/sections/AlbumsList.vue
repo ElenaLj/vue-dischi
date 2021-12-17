@@ -1,7 +1,10 @@
 <template>
-    <div class="container">
-        <div class="albums-container" v-for="(album, index) in albums" :key="index">
-            <AlbumCard :info="album"/>
+    <div class="albumslist">
+        <SelectGenre @genre="searchGenre"/>
+        <div class="container">
+            <div class="albums-container" v-for="(album, index) in albums" :key="index">
+                <AlbumCard :info="album"/>
+            </div>
         </div>
     </div>
 </template>
@@ -9,15 +12,18 @@
 <script>
 import axios from 'axios';
 import AlbumCard from '../commons/AlbumCard.vue';
+import SelectGenre from '../commons/SelectGenre.vue';
 
 export default {
     name: 'AlbumsList',
     components: {
-        AlbumCard
+        AlbumCard,
+        SelectGenre
     },
     data(){
         return {
-            albums: null
+            albums: null,
+            searchSong: ""
         }
     },
     created() {
@@ -31,7 +37,19 @@ export default {
             // handle error
             console.log(error);
         });
-    }
+    },
+    methods: {
+        searchGenre(genre) {
+            this.searchSong = genre;
+        }
+    },
+    computed: {
+        filteredGenres() {
+            return this.albums.filter((el) =>{
+                return el.genre.includes(this.searchSong);
+            });
+        }
+    },
 }
 </script>
 
