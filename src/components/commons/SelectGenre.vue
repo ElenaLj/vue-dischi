@@ -1,6 +1,6 @@
 <template>
   <div class="select-genre">
-      <label for="genre">Choose your favourite music genre:</label>
+      <label for="genre">Choose your favourite music genre: </label>
       <select name="genre-selection" id="genre" v-model="selectGenre" @change="$emit('genre', selectGenre)">
           <option value="rock">Rock</option>
           <option value="pop">Pop</option>
@@ -22,5 +22,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/partials/variables.scss';
 
+    .select-genre {
+        text-align: center;
+        color: $text-light;
+    }
 </style>
