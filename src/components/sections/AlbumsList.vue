@@ -2,7 +2,7 @@
     <div class="albumslist">
         <SelectGenre @genre="searchGenre"/>
         <div class="container">
-            <div class="albums-container" v-for="(album, index) in albums" :key="index">
+            <div class="albums-container" v-for="(album, index) in filteredGenres" :key="index">
                 <AlbumCard :info="album"/>
             </div>
         </div>
@@ -22,7 +22,7 @@ export default {
     },
     data(){
         return {
-            albums: null,
+            albums: [],
             searchSong: ""
         }
     },
@@ -40,15 +40,17 @@ export default {
     },
     methods: {
         searchGenre(genre) {
+            console.log(genre);
             this.searchSong = genre;
         }
     },
     computed: {
         filteredGenres() {
+            console.log(this.albums, this.searchSong);
             return this.albums.filter((el) =>{
-                return el.genre.includes(this.searchSong);
+                return el.genre.toLowerCase().includes(this.searchSong);
             });
-        }
+        },
     },
 }
 </script>
